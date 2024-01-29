@@ -1,4 +1,5 @@
 import "./main.css";
+import "./global.css";
 
 import App from "./App.tsx";
 import React from "react";
