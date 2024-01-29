@@ -1,4 +1,4 @@
-import "./index.css";
+import "./main.css";
 
 import App from "./App.tsx";
 import React from "react";
