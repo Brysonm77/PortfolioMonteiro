@@ -1,76 +1,47 @@
 import "./../../main.css";
+import "./../../global.css";
 
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <nav className="flex items-center justify-between p-4 bg-gray-800 text-white w-full">
-      <div className="text-2xl">Icon</div>
-      {/* Desktop Links */}
-      <div className="hidden md:flex items-center">
-        {/* Assuming you want these links to be aligned to the left, close to the Icon */}
-        <a href="#" className="py-2 px-4 text-sm hover:bg-gray-700">
-          Home
-        </a>
-        <a href="#" className="py-2 px-4 text-sm hover:bg-gray-700">
-          About
-        </a>
-        <a href="#" className="py-2 px-4 text-sm hover:bg-gray-700">
-          Services
-        </a>
-        <a href="#" className="py-2 px-4 text-sm hover:bg-gray-700">
-          Contact
-        </a>
-      </div>
-      {/* Hamburger Icon for smaller screens */}
-      <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-        {/* Hamburger Icon */}
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-          ></path>
-        </svg>
-      </div>
-      {/* Mobile Menu */}
-      <div
-        className={`${
-          isOpen ? "flex" : "hidden"
-        } md:hidden flex-col items-start bg-gray-800 w-full`}
-      >
+    <nav className="flex items-center justify-center p-4 bg-galaxy-deepurple text-galaxy-white w-full">
+      <div className="flex items-center justify-center gap-x-4 w-full max-w-4xl">
+        {/* Directly control spacing with margin around the links */}
         <a
-          href="#"
-          className="py-2 px-4 text-sm hover:bg-gray-700 text-white w-full text-left"
-        >
-          Home
-        </a>
-        <a
-          href="#"
-          className="py-2 px-4 text-sm hover:bg-gray-700 text-white w-full text-left"
+          href="about"
+          className="hover:text-galaxy-brightpurple transition-colors font-bold mx-2"
         >
           About
         </a>
         <a
-          href="#"
-          className="py-2 px-4 text-sm hover:bg-gray-700 text-white w-full text-left"
+          href="resume"
+          className="hover:text-galaxy-brightpurple transition-colors font-bold mx-2"
         >
-          Services
+          Resume
+        </a>
+
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="bg-galaxy-purple p-2 rounded-full mx-4"
+        >
+          <a href=" ">
+            <>womp</>
+          </a>
+        </motion.button>
+
+        <a
+          href="skills"
+          className="hover:text-galaxy-brightpurple transition-colors font-bold mx-2"
+        >
+          Skills
         </a>
         <a
-          href="#"
-          className="py-2 px-4 text-sm hover:bg-gray-700 text-white w-full text-left"
+          href="contact"
+          className="hover:text-galaxy-brightpurple transition-colors font-bold mx-2"
         >
-          Contact
+          Contact Me
         </a>
       </div>
     </nav>
