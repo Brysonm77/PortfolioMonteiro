@@ -1,6 +1,7 @@
 import "./../../main.css";
 import "./../../global.css";
 
+import iconBm from "../../assets/img/bmIcon.png";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
@@ -24,11 +25,9 @@ const NavBar = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-galaxy-purple p-2 rounded-full mx-4"
+          className="p-2 rounded-full mx-4"
         >
-          <a href=" ">
-            <>womp</>
-          </a>
+          <img src={iconBm} alt="IconBm" />
         </motion.button>
 
         <a
