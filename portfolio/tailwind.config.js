@@ -14,6 +14,10 @@ export default {
           black: "#000000",
         },
       },
+      backgroundImage: {
+        "galaxy-gradient":
+          "linear-gradient(to right, #1d1e5f, #3E0B51, #0a0f38, #7D5BA6)",
+      },
     },
   },
   plugins: [],
