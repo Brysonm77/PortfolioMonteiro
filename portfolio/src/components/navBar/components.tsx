@@ -38,12 +38,26 @@ const NavBar = () => {
       <div className="flex items-center justify-center md:justify-between w-full max-w-4xl mx-auto">
         {/* Left Links (visible on desktop only) */}
         <div className="hidden md:flex flex-grow items-center justify-end space-x-4">
-          <button className="hover:text-galaxy-brightpurple transition-colors font-bold text-lg">
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full mx-2 font-bold text-lg"
+          >
             About
-          </button>
-          <button className="hover:text-galaxy-brightpurple transition-colors font-bold text-lg">
+          </motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full mx-2 font-bold text-lg"
+          >
             Resume
-          </button>
+          </motion.button>
         </div>
 
         <motion.button
@@ -58,12 +72,26 @@ const NavBar = () => {
         </motion.button>
 
         <div className="hidden md:flex flex-grow items-center justify-start space-x-4">
-          <button className="hover:text-galaxy-brightpurple transition-colors font-bold text-lg">
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full mx-2 font-bold text-lg"
+          >
             Skills
-          </button>
-          <button className="hover:text-galaxy-brightpurple transition-colors font-bold text-lg">
+          </motion.button>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full mx-2 font-bold text-lg"
+          >
             Contact Me
-          </button>
+          </motion.button>
         </div>
 
         {/* Hamburger Menu Icon (visible on mobile only) */}
