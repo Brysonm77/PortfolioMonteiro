@@ -4,6 +4,14 @@ import iconBm from "../../assets/img/BmIcon.png";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
+  const handleLinkClick = (event: React.MouseEvent, id: string) => {
+    event.preventDefault();
+
+    const section = document.getElementById(id);
+    if (section !== null) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   const [isOpen, setIsOpen] = useState(false);
 
   const overlayVariants = {
@@ -16,7 +24,6 @@ const NavBar = () => {
       opacity: 1,
       transition: { duration: 0.2, ease: "easeInOut" }, // Quick transition for pop effect
     },
-    // Return to normal size after hover or add additional states as needed
   };
 
   const lineVariants = {
@@ -200,26 +207,27 @@ const NavBar = () => {
             </motion.button>
           </motion.div>
           <motion.div
-            className="mt-23 h-12 w-full rounded overflow-hidden relative bg-galaxy-gradient"
+            className="relative mt-23 h-12 w-full rounded overflow-hidden bg-galaxy-gradient"
             initial="initial"
             whileHover="hover"
           >
-            {/* Overlay with the second gradient */}
             <motion.div
               className="absolute inset-0 bg-galaxy-inv"
               variants={overlayVariants}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
             <motion.button
-              className="absolute inset-0 w-full h-full font-bold text-xl"
+              className="font-bold text-xl text-white absolute inset-0 w-full h-full flex items-center justify-center"
               variants={{}}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
               }}
               whileTap={{ scale: 0.9 }}
+              onClick={(e) => handleLinkClick(e, "contact")} // Adjusted to trigger smooth scroll on click
+              style={{ background: "none", border: "none" }} // Ensuring the button has no additional styling
             >
-              Contact Me
+              Contact
             </motion.button>
           </motion.div>
         </motion.div>
