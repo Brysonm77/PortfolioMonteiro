@@ -40,7 +40,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex items-center p-4 bg-galaxy-gradient text-white w-full">
+    <nav className="fixed flex z-50 items-center p-4 bg-galaxy-gradient text-white w-full">
       {/* Flex container for centering items on all screens, justify-between on desktop */}
       <div className="flex items-center justify-center md:justify-between w-full max-w-4xl mx-auto">
         {/* Left Links (visible on desktop only) */}
@@ -135,7 +135,7 @@ const NavBar = () => {
           animate={{ y: 0 }} // Move to original position
           exit={{ y: "-100%" }} // Exit to the top
           transition={{ type: "spring", stiffness: 30, duration: 0.5 }}
-          className="absolute top-0 right-0 h-full w-full bg-black bg-opacity-65 text-white flex flex-col space-y-3 md:hidden"
+          className="fixed top-[0rem] right-0 h-full w-full bg-black bg-opacity-65 text-white flex flex-col space-y-3 md:hidden"
         >
           <motion.div
             className="mt-23 h-12 w-full rounded overflow-hidden relative bg-galaxy-gradient"
