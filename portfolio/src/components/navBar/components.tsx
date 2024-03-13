@@ -11,6 +11,9 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      if (isOpen) {
+        setIsOpen(false);
+      }
       if (currentScrollY > lastScrollY) {
         // Scrolling down
         setNavbarVisible(false);
@@ -163,7 +166,7 @@ const NavBar = () => {
       {isOpen && (
         <motion.div
           initial={{ y: "-100%" }} // Start above the view
-          animate={{ y: 0 }} // Move to original position
+          animate={{ y: isOpen ? 0 : "-100%" }}
           exit={{ y: "-100%" }} // Exit to the top
           transition={{ type: "spring", stiffness: 30, duration: 0.5 }}
           className="fixed top-[7rem] right-0 h-full w-full bg-black bg-opacity-65 text-white flex flex-col space-y-3 md:hidden"
