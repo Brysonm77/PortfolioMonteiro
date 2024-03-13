@@ -1,9 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import iconBm from "../../assets/img/BmIcon.png";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [navbarVisible, setNavbarVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setNavbarVisible(false);
+      } else {
+        // Scrolling up
+        setNavbarVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   const handleLinkClick = (event: React.MouseEvent, id: string) => {
     event.preventDefault();
 
@@ -12,7 +36,7 @@ const NavBar = () => {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   const overlayVariants = {
     initial: {
@@ -40,7 +64,10 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed flex z-50 items-center p-4 bg-galaxy-gradient text-white w-full">
+    <nav
+      className={`fixed top-0 z-50 flex items-center p-4 bg-galaxy-gradient text-white w-full transition-transform duration-300 
+    ${navbarVisible ? "" : "-translate-y-full"}`}
+    >
       {/* Flex container for centering items on all screens, justify-between on desktop */}
       <div className="flex items-center justify-center md:justify-between w-full max-w-4xl mx-auto">
         {/* Left Links (visible on desktop only) */}
