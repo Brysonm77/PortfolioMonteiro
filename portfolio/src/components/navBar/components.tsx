@@ -51,6 +51,7 @@ const NavBar = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            onClick={(e) => handleLinkClick(e, "about")}
             className="p-2 rounded-full mx-2 font-bold text-lg"
           >
             About
@@ -61,6 +62,7 @@ const NavBar = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            onClick={(e) => handleLinkClick(e, "resume")}
             className="p-2 rounded-full mx-2 font-bold text-lg"
           >
             Resume
@@ -73,6 +75,7 @@ const NavBar = () => {
             transition: { duration: 0.2 },
           }}
           whileTap={{ scale: 0.9 }}
+          onClick={(e) => handleLinkClick(e, "landing")}
           className="p-2 rounded-full mx-2"
         >
           <img src={iconBm} alt="IconBm" className="h-16 w-16" />
@@ -85,6 +88,7 @@ const NavBar = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            onClick={(e) => handleLinkClick(e, "skills")}
             className="p-2 rounded-full mx-2 font-bold text-lg"
           >
             Skills
@@ -95,6 +99,7 @@ const NavBar = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            onClick={(e) => handleLinkClick(e, "contact")}
             className="p-2 rounded-full mx-2 font-bold text-lg"
           >
             Contact Me
@@ -135,73 +140,76 @@ const NavBar = () => {
           animate={{ y: 0 }} // Move to original position
           exit={{ y: "-100%" }} // Exit to the top
           transition={{ type: "spring", stiffness: 30, duration: 0.5 }}
-          className="fixed top-[0rem] right-0 h-full w-full bg-black bg-opacity-65 text-white flex flex-col space-y-3 md:hidden"
+          className="fixed top-[7rem] right-0 h-full w-full bg-black bg-opacity-65 text-white flex flex-col space-y-3 md:hidden"
         >
           <motion.div
-            className="mt-23 h-12 w-full rounded overflow-hidden relative bg-galaxy-gradient"
+            className="relative mt-10 h-12 w-full rounded overflow-hidden bg-galaxy-gradient"
             initial="initial"
             whileHover="hover"
           >
-            {/* Overlay with the second gradient */}
             <motion.div
               className="absolute inset-0 bg-galaxy-inv"
               variants={overlayVariants}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
             <motion.button
-              className="absolute inset-0 w-full h-full font-bold text-xl"
+              className="font-bold text-xl text-white absolute inset-0 w-full h-full flex items-center justify-center"
               variants={{}}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
               }}
               whileTap={{ scale: 0.9 }}
+              onClick={(e) => handleLinkClick(e, "about")} // Adjusted to trigger smooth scroll on click
+              style={{ background: "none", border: "none" }} // Ensuring the button has no additional styling
             >
               About
             </motion.button>
           </motion.div>
           <motion.div
-            className="mt-23 h-12 w-full rounded overflow-hidden relative bg-galaxy-gradient"
+            className="relative mt-23 h-12 w-full rounded overflow-hidden bg-galaxy-gradient"
             initial="initial"
             whileHover="hover"
           >
-            {/* Overlay with the second gradient */}
             <motion.div
               className="absolute inset-0 bg-galaxy-inv"
               variants={overlayVariants}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
             <motion.button
-              className="absolute inset-0 w-full h-full font-bold text-xl"
+              className="font-bold text-xl text-white absolute inset-0 w-full h-full flex items-center justify-center"
               variants={{}}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
               }}
               whileTap={{ scale: 0.9 }}
+              onClick={(e) => handleLinkClick(e, "resume")} // Adjusted to trigger smooth scroll on click
+              style={{ background: "none", border: "none" }} // Ensuring the button has no additional styling
             >
               Resume
             </motion.button>
           </motion.div>
           <motion.div
-            className="mt-23 h-12 w-full rounded overflow-hidden relative bg-galaxy-gradient"
+            className="relative mt-23 h-12 w-full rounded overflow-hidden bg-galaxy-gradient"
             initial="initial"
             whileHover="hover"
           >
-            {/* Overlay with the second gradient */}
             <motion.div
               className="absolute inset-0 bg-galaxy-inv"
               variants={overlayVariants}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
             <motion.button
-              className="absolute inset-0 w-full h-full font-bold text-xl"
+              className="font-bold text-xl text-white absolute inset-0 w-full h-full flex items-center justify-center"
               variants={{}}
               whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.2 },
               }}
               whileTap={{ scale: 0.9 }}
+              onClick={(e) => handleLinkClick(e, "skills")} // Adjusted to trigger smooth scroll on click
+              style={{ background: "none", border: "none" }} // Ensuring the button has no additional styling
             >
               Skills
             </motion.button>

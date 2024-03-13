@@ -41,6 +41,7 @@ export default {
         38: "23rem",
         39: "24rem",
         40: "25rem",
+        100: "85rem",
       },
     },
   },

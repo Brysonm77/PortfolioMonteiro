@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="pt-16"></div>
       <div id="landing">
         <Landing />
       </div>
