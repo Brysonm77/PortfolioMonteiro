@@ -2,7 +2,7 @@
 const Background = () => {
   return (
     <>
-      <div className="bg-galaxy-gradient h-16"></div>
+      <div className="bg-galaxy-gradient h-22"></div>
     </>
   );
 };

@@ -11,11 +11,11 @@ import Skills from "./components/skills";
 function App() {
   return (
     <>
-      <Background />
       <NavBar />
       <div id="landing">
-        <Landing />
+        <Background />
       </div>
+      <Landing />
       <div id="about">
         <About />
       </div>
