@@ -13,9 +13,9 @@ function App() {
     <>
       <NavBar />
       <div id="landing">
-        <Background />
+        {/* <Background /> */}
+        <Landing />
       </div>
-      <Landing />
       <div id="about">
         <About />
       </div>
