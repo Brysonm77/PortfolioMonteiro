@@ -59,20 +59,7 @@ const Landing = () => {
           }}
         />
       ))}
-      <motion.div
-        className="font-bold text-5xl text-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        style={{
-          position: "absolute",
-          bottom: "20%",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        Your Shiny Grey Heading Here
-      </motion.div>
+      <motion.div>this is a test</motion.div>
     </div>
   );
 };

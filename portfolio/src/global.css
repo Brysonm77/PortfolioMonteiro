@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 body {
   @apply font-sans;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
