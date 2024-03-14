@@ -67,7 +67,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-90 flex items-center p-4 bg-galaxy-gradient text-white w-full transition-transform duration-300 
+      className={`fixed top-0 z-50 flex items-center p-4 text-white w-full transition-transform duration-300 
     ${navbarVisible ? "" : "-translate-y-full"}`}
     >
       {/* Flex container for centering items on all screens, justify-between on desktop */}
