@@ -1,6 +1,37 @@
+import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 
+const descriptors = ["Bryson", "a developer", "creative", "an engineer"];
+
 const Landing = () => {
+  const [currentDescriptorIndex, setCurrentDescriptorIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+
+  useEffect(() => {
+    const currentDescriptor = descriptors[currentDescriptorIndex];
+    let charIndex = 0;
+
+    const intervalId = setInterval(() => {
+      setCurrentText(currentDescriptor.slice(0, charIndex + 1));
+      charIndex += 1;
+
+      if (charIndex === currentDescriptor.length) {
+        clearInterval(intervalId);
+        // Move to the next descriptor after a pause
+        setTimeout(() => {
+          setCurrentDescriptorIndex(
+            (prevIndex) => (prevIndex + 1) % descriptors.length
+          );
+          setCurrentText(""); // Clear current text for the next descriptor
+        }, 1200); // Slightly reduced pause before the next descriptor
+      }
+    }, 50);
+
+    // Cleanup on effect re-run or component unmount
+    return () => clearInterval(intervalId);
+  }, [currentDescriptorIndex]);
+
   const stars = Array.from({ length: 100 }).map((_, index) => ({
     id: index,
     x: Math.random() * 100 + "vw",
@@ -8,9 +39,7 @@ const Landing = () => {
     scale: Math.random(),
   }));
 
-  // Adjusted to generate 4 shooting stars instead of 5
-  const shootingStars = Array.from({ length: 4 }).map((_, index) => ({
-    // Changed from 5 to 4
+  const shootingStars = Array.from({ length: 5 }).map((_, index) => ({
     id: index,
     initialX: Math.random() * 100 - 50 + "vw", // Start off-screen
     finalX: Math.random() * 100 + 100 + "vw", // End off-screen
@@ -59,7 +88,24 @@ const Landing = () => {
           }}
         />
       ))}
-      <motion.div>this is a test</motion.div>
+      <div className="flex h-full flex-col justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center mr-0 lg:mr-40">
+          <motion.div
+            className="m-2 p-4 text-galaxy-grey text-8xl shine" // Add 'shine' class here
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Hello, Welcome To My Life!
+          </motion.div>
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center">
+          <motion.div className="m-2 p-4 text-galaxy-grey text-6xl">
+            I am {currentText}
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

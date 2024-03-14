@@ -8,3 +8,26 @@ body {
 html {
   scroll-behavior: smooth;
 }
+@keyframes shineAnimation {
+  0%,
+  100% {
+    background-position: left -55% top 0;
+  }
+  50% {
+    background-position: right -55% top 0;
+  }
+}
+
+.shine {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shineAnimation 5s linear infinite;
+}

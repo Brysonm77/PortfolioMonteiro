@@ -10,7 +10,7 @@ export default {
           lightpurple: "#2a3b8f",
           deepurple: "#3E0B51",
           brightpurple: "#7D5BA6",
-          grey: "#A6A6A6",
+          grey: "#909090",
         },
       },
       backgroundImage: {
