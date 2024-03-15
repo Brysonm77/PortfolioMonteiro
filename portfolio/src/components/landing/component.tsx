@@ -10,9 +10,22 @@ const descriptors = [
   "a problem solver",
 ];
 
+// Function to generate a single shooting star's properties
+const generateShootingStar = () => ({
+  id: Math.random(),
+  initialX: `${Math.random() * 100 - 50}vw`,
+  finalX: `${Math.random() * 100 + 100}vw`,
+  y: `${Math.random() * 100}vh`,
+  duration: Math.random() * 2 + 1,
+});
+
 const Landing = () => {
   const [currentDescriptorIndex, setCurrentDescriptorIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
+  // Ensure this is the only place shootingStars is defined in your component
+  const [shootingStars, setShootingStars] = useState(
+    Array.from({ length: 5 }, generateShootingStar)
+  );
 
   useEffect(() => {
     const currentDescriptor = descriptors[currentDescriptorIndex];
@@ -24,33 +37,31 @@ const Landing = () => {
 
       if (charIndex === currentDescriptor.length) {
         clearInterval(intervalId);
-        // Move to the next descriptor after a pause
         setTimeout(() => {
           setCurrentDescriptorIndex(
             (prevIndex) => (prevIndex + 1) % descriptors.length
           );
-          setCurrentText(""); // Clear current text for the next descriptor
-        }, 1200); // Slightly reduced pause before the next descriptor
+          setCurrentText("");
+        }, 1200);
       }
     }, 50);
 
-    // Cleanup on effect re-run or component unmount
     return () => clearInterval(intervalId);
   }, [currentDescriptorIndex]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setShootingStars(Array.from({ length: 5 }, generateShootingStar));
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const stars = Array.from({ length: 100 }).map((_, index) => ({
     id: index,
     x: Math.random() * 100 + "vw",
     y: Math.random() * 100 + "vh",
     scale: Math.random(),
-  }));
-
-  const shootingStars = Array.from({ length: 5 }).map((_, index) => ({
-    id: index,
-    initialX: Math.random() * 100 - 50 + "vw", // Start off-screen
-    finalX: Math.random() * 100 + 100 + "vw", // End off-screen
-    y: Math.random() * 100 + "vh",
-    duration: Math.random() * 2 + 1, // Duration between 1 to 3 seconds
   }));
 
   return (
@@ -78,7 +89,10 @@ const Landing = () => {
         <motion.div
           key={star.id}
           initial={{ x: star.initialX, y: star.y }}
-          animate={{ x: star.finalX, y: star.y }}
+          animate={{
+            x: [star.initialX, star.finalX], // Add intermediate X points if needed
+            y: ["15vh", "90vh"],
+          }}
           transition={{
             duration: star.duration,
             repeat: Infinity,
@@ -86,11 +100,9 @@ const Landing = () => {
           }}
           style={{
             position: "absolute",
-            width: "2px",
-            height: "2px",
-            borderRadius: "100%",
+            width: "2.5px",
+            height: "2.5px",
             backgroundColor: "white",
-            boxShadow: "0 0 8px white, 0 0 15px white", // Glowing effect
           }}
         />
       ))}
