@@ -21,7 +21,7 @@ html {
 .shine {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 25%,
+    rgba(84, 84, 84, 0) 25%,
     rgba(255, 255, 255, 0.8) 50%,
     rgba(255, 255, 255, 0) 75%
   );

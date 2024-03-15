@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
-const descriptors = ["Bryson", "a developer", "creative", "an engineer"];
+const descriptors = [
+  "a learner",
+  "a developer",
+  "creative",
+  "an engineer",
+  "a problem solver",
+];
 
 const Landing = () => {
   const [currentDescriptorIndex, setCurrentDescriptorIndex] = useState(0);
@@ -91,7 +97,7 @@ const Landing = () => {
       <div className="flex h-full flex-col justify-center items-center">
         <div className="flex flex-wrap justify-center items-center mr-0 lg:mr-40">
           <motion.div
-            className="m-2 p-4 text-galaxy-grey text-8xl shine" // Add 'shine' class here
+            className="m-2 p-4 text-galaxy-grey text-6xl shine sm:text-8xl" // Add 'shine' class here
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -101,7 +107,7 @@ const Landing = () => {
         </div>
 
         <div className="flex flex-wrap justify-center items-center">
-          <motion.div className="m-2 p-4 text-galaxy-grey text-6xl">
+          <motion.div className="mt-20 p-4 text-white text-4xl sm:text-6xl">
             I am {currentText}
           </motion.div>
         </div>
