@@ -71,6 +71,10 @@ const About = () => {
           }}
         />
       ))}
+      i just want to see something Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Culpa accusantium officia quidem ut praesentium
+      molestias sed, earum impedit distinctio quasi veniam architecto cumque ad
+      numquam dicta vel saepe quam consectetur!
     </div>
   );
 };

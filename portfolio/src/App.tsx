@@ -1,6 +1,6 @@
 import "./main.css";
 
-import About from "./components/contact";
+import About from "./components/about";
 import Contact from "./components/contact";
 import Landing from "./components/landing";
 import NavBar from "./components/navBar";
@@ -23,7 +23,7 @@ function App() {
       <div id="skills">
         <Skills />
       </div>
-      <div id="contact" className="section-classname">
+      <div id="contact">
         <Contact />
       </div>
     </>

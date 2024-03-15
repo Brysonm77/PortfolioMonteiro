@@ -264,7 +264,7 @@ const NavBar = () => {
               onClick={(e) => handleLinkClick(e, "contact")} // Adjusted to trigger smooth scroll on click
               style={{ background: "none", border: "none" }} // Ensuring the button has no additional styling
             >
-              Contact
+              Contact Me
             </motion.button>
           </motion.div>
         </motion.div>
