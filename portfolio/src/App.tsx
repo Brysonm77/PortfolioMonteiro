@@ -1,7 +1,6 @@
 import "./main.css";
 
 import About from "./components/contact";
-import Background from "./components/background";
 import Contact from "./components/contact";
 import Landing from "./components/landing";
 import NavBar from "./components/navBar";
@@ -13,9 +12,8 @@ function App() {
     <>
       <NavBar />
       <div id="landing">
-        <Background />
+        <Landing />
       </div>
-      <Landing />
       <div id="about">
         <About />
       </div>
