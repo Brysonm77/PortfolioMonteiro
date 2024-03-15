@@ -29,7 +29,7 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [isOpen, lastScrollY]);
 
   const handleLinkClick = (event: React.MouseEvent, id: string) => {
     event.preventDefault();

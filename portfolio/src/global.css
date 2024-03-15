@@ -2,7 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 body {
-  @apply font-sans;
   overflow-x: hidden;
 }
 html {
