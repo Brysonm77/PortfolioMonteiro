@@ -71,10 +71,18 @@ const About = () => {
           }}
         />
       ))}
-      i just want to see something Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Culpa accusantium officia quidem ut praesentium
-      molestias sed, earum impedit distinctio quasi veniam architecto cumque ad
-      numquam dicta vel saepe quam consectetur!
+      <div className="text-white">
+        <div className="flex h-full flex-col justify-center">
+          <p>this is where an image of me would go</p>
+          <div className="flex flex-wrap justify-center items-center">
+            <p>
+              I'm Bryson, a Software Engineer who loves to not only learn, but
+              also grow in all aspects of life. I guess you can I say I adopted
+              thi lifestyle
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
