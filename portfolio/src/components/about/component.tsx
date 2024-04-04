@@ -76,9 +76,24 @@ const About = () => {
           <p>this is where an image of me would go</p>
           <div className="flex flex-wrap justify-center items-center">
             <p>
-              I'm Bryson, a Software Engineer who loves to not only learn, but
-              also grow in all aspects of life. I guess you can I say I adopted
-              thi lifestyle
+              I have lived my life based on three pillars. Through these
+              pillars(below) I have not only been able to learn academically,
+              but also learn how to be an overall better person. My journey in
+              technology started through the military as a Data System
+              Administrator. I achieved a rank of a Corporal, which promopted me
+              to be in charge of not only the well being of my junior Marines,
+              but I also had to ensure their technical proficiency was exceeding
+              the Marine Corps standard. Going into the miliary exposed me to
+              various concepts and software/hardware tools, however, I was not
+              satisfied with the current knowledge I possessed. This started my
+              Computer Science journey where I fell in love with Software
+              Development. My degree put me in different situations with
+              different types of tools while simultaneously exposing me to
+              different groups of people with the same mindset. I fell in love
+              with the creative freedom and the critical thinking that comes
+              with development. I hope to find a company that allows me to grow
+              creatively, but also expose me to new problems and questions which
+              will keep me learning.
             </p>
           </div>
         </div>
