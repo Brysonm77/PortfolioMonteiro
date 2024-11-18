@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const descriptors = [
   "a learner",
-  "a developer",
+  "a Marine",
   "creative",
   "an engineer",
   "a problem solver",
