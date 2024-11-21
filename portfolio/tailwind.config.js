@@ -19,9 +19,6 @@ export default {
         "galaxy-inv": "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
         "galaxy-grey": "linear-gradient(75deg, #f0f0f0, #ffffff, #f0f0f0)",
       },
-      fontFamily: {
-        sans: ["Helvetica", "Arial", "sans-serif"],
-      },
       spacing: {
         21: "6rem",
         22: "7rem",

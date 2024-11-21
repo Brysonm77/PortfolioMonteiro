@@ -65,7 +65,7 @@ const Landing = () => {
   }));
 
   return (
-    <div className="h-screen left-0 w-full overflow-hidden bg-gradient-to-b from-black to-black via-galaxy-darkblue">
+    <div className=" h-screen left-0 w-full overflow-hidden bg-gradient-to-b from-black to-black via-galaxy-darkblue">
       {stars.map((star) => (
         <motion.div
           key={star.id}
@@ -109,7 +109,7 @@ const Landing = () => {
       <div className="flex h-full flex-col justify-center items-center">
         <div className="flex flex-wrap justify-center items-center mr-0 lg:mr-40">
           <motion.div
-            className="m-2 p-4 text-galaxy-grey text-6xl shine sm:text-8xl" // Add 'shine' class here
+            className="m-2 p-4 text-galaxy-grey text-6xl shine sm:text-8xl" 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

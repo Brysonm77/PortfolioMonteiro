@@ -1,6 +1,6 @@
 import "./main.css";
 
-import About from "./components/contact";
+import About from "./components/about";
 import Contact from "./components/contact";
 import Landing from "./components/landing";
 import NavBar from "./components/navBar";
@@ -15,7 +15,7 @@ function App() {
         <Landing />
       </div>
       <div id="about">
-        <About />
+        <About/>
       </div>
       <div id="resume">
         <Resume />
