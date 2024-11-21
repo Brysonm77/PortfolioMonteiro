@@ -5,9 +5,69 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrysonPortfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+   
+   body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+
+    /* Sparkle effect */
+    .sparkle {
+      position: absolute;
+      width: 1.5px;
+      height: 1.5px;
+      background-color: #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkleAnimation 1s ease-out forwards;
+    }
+
+    /* Animation for the sparkles */
+    @keyframes sparkleAnimation {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(2);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // JavaScript to create the sparkly mouse trail
+      document.addEventListener('mousemove', function(e) {
+        // Create a sparkle element
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+  
+        // Position the sparkle where the mouse is
+        sparkle.style.left = `${e.pageX - 5}px`; // Center the sparkle on the mouse
+        sparkle.style.top = `${e.pageY - 5}px`; // Center the sparkle on the mouse
+  
+        // Add the sparkle to the document body
+        document.body.appendChild(sparkle);
+  
+        // Remove the sparkle after the animation is complete
+        setTimeout(() => {
+          sparkle.remove();
+        }, 1000); // Match this time with the duration of the animation
+      });
+    </script>
+  
   </body>
 </html>
