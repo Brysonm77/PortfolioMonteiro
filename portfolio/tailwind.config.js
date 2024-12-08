@@ -11,6 +11,7 @@ export default {
           deepurple: "#3E0B51",
           brightpurple: "#7D5BA6",
           grey: "#909090",
+          darkred: "#721919",
         },
       },
       backgroundImage: {
